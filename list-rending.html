@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      {{ message }}
+
+      <ul>
+        <li v-for="animal in animals">{{ animal }}</li>
+      </ul>
+
+      <ol>
+         <li v-for="user in users">My Name is {{ user.name }}, I'm {{ user.age }} olds, I live in {{ user.address }}</li>
+      </ol>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          message: "Hello Vue",
+          animals: ["dog", "cat", "lion", "rabbit"],
+          users: [
+            {
+              name: "Min Khant Maw",
+              address: "Yangon",
+              age: 24,
+            },
+            {
+              name: "Min  Maw",
+              address: "Yangon",
+              age: 24,
+            },
+            {
+              name: "Min Khant ",
+              address: "Yangon",
+              age: 24,
+            },
+          ],
+        },
+      });
+    </script>
+  </body>
+</html>
