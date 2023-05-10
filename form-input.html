@@ -10,8 +10,12 @@
     <div id="app">
       {{ title }}
       <br />
-      <input type="text" v-model="newItem" />
-      <button>Add Item</button>
+      <form @submit.prevent="todos.push(newItem)">
+        <input type="text" v-model="newItem"/>
+        <button type="submit">Add Item</button>
+      </form>
+      <!-- <input type="text" v-model="newItem" v-on:keyup.enter="todos.push(newItem)" />
+      <button v-on:click="todos.push(newItem)" type="submit">Add Item</button> -->
       <ul>
         <li v-for="todo in todos">{{ todo }}</li>
       </ul>
